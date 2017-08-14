@@ -1,11 +1,10 @@
 {
-  "name": "facebook-basic",
-  "description": "a very basic facebook example based on react, redux, express and mongoDB(mongoose)",
+  "name": "event-feed",
+  "description": "event feed on react, redux, express and mongoDB(mongoose)",
   "main": "server/server.js",
   "authors": [
-    "Masaud Yakubu <sophismay@gmail.com>"
+    "shyam"
   ],
-  "license": "MIT",
   "moduleType": [
     "es6",
     "node"
