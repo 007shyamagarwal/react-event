@@ -1,6 +1,7 @@
 import React from 'react';
 import Formsy from 'formsy-react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap'
+import Proptypes from  'prop-types';    //added for new features
 
 const Input = React.createClass({
 

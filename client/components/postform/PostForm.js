@@ -6,8 +6,20 @@ import Input from '../input/Input'
 import { Button } from 'react-bootstrap'
 import { browserHistory } from 'react-router'
 
-let PostForm = new React.createClass({
+class PostForm extends React.Component{
 
+	constructor(){
+		super();
+		this.handleSubmit=this.handleSubmit.bind(this);
+		this.enableButton=this.enableButton.bind(this);
+		this.disableButton=this.disableButton.bind(this);
+		this.state={
+			text: '',
+			type: '',
+			message: '',
+			canSubmit: false,
+		}
+	}
 	handleSubmit(data){
 		console.log('data from post form: ' + JSON.stringify(data))
 		this.setState({
@@ -17,24 +29,24 @@ let PostForm = new React.createClass({
 		let dispatch = store.dispatch
 		dispatch(createPost(data))
 			.then( () => { browserHistory.push('/home') })
-	},
+	}
 
 	enableButton() {
   		this.setState({ canSubmit: true });
-  	},
+  	}
 
   	disableButton() {
   		this.setState({ canSubmit: false });
-  	},
+  	}
 
-	getInitialState(){
-		return {
-			text: '',
-			type: '',
-			message: '',
-			canSubmit: false
-		}
-	},
+	// getInitialState(){
+	// 	return {
+	// 		text: '',
+	// 		type: '',
+	// 		message: '',
+	// 		canSubmit: false
+	// 	}
+	// }
 	
 	render(){
 		return (
@@ -50,6 +62,6 @@ let PostForm = new React.createClass({
 			</div>
 		)
 	}
-})
+}
 
 export default PostForm

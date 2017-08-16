@@ -6,13 +6,17 @@ import Auth from '../../auth/auth'
 import store from '../../redux/store'
 import { browserHistory } from 'react-router'
 
-let NavBar = new React.createClass({
+class NavBar extends React.Component{
+	constructor(){
+		super();
+		this.logoutUser=this.logoutUser.bind(this);
+	};
 
 	logoutUser(e){
 		e.preventDefault()
 		let dispatch = store.dispatch
 		dispatch(logoutUser())
-	},
+	}
 	
 	render(){
 		let whenLoggedIn = <div className="relevant-nav-item">
@@ -40,6 +44,6 @@ let NavBar = new React.createClass({
 			</Navbar>
 		)
 	}
-});
+};
 
 export default NavBar

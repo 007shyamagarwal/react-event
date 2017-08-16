@@ -10,7 +10,24 @@ import { Form } from 'formsy-react'
 import Input from '../input/Input'
 import { Button } from 'react-bootstrap'
 
-let Login = new React.createClass({
+ class Login extends  React.Component{
+		
+	constructor(){
+		super();
+		this.state = {
+			type: null,
+			message: null,
+			canSubmit:true,
+			email:null,
+			password:null,
+
+
+		};
+		this.handleEmailChange=this.handleEmailChange.bind(this);
+		this.handlePasswordChange=this.handlePasswordChange.bind(this);
+		this.handleSubmit=this.handleSubmit.bind(this);
+	}
+		
 
 	handleSubmit(data){
 		this.setState({
@@ -52,30 +69,30 @@ let Login = new React.createClass({
 			}
 		});
 
-	},
+	}
 
-	handleEmailChange: function(e) {
+	handleEmailChange = (e) => {
     	this.setState({email: e.target.value});
-  	},
+  	}
 
-  	handlePasswordChange: function(e) {
+  	handlePasswordChange = (e) =>{
     	this.setState({password: e.target.value});
-  	},
+  	}
 
   	enableButton() {
   		this.setState({ canSubmit: true });
-  	},
+  	}
 
   	disableButton() {
   		this.setState({ canSubmit: false });
-  	},
+  	}
 
   	getInitialState(){
 		return {
 			loggedIn: Auth.loggedIn(),
 			canSubmit: false
 		}
-	},
+	}
 
 	render(){
 		// redirect home if already logged in
@@ -111,7 +128,7 @@ let Login = new React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 function mapStateToProps(state, props){
 	return { 

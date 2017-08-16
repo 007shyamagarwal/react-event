@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import CommentsBox from '../commentsbox/CommentsBox'
 
-let Post = new React.createClass({
+class Post extends React.Component{
+	constructor(){
+		super();
+	}
+	
 	render(){
 		let post = this.props.post
 		return (
@@ -15,6 +19,6 @@ let Post = new React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 export default Post

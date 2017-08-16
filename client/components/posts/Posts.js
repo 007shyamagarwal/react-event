@@ -4,7 +4,14 @@ import store from '../../redux/store'
 import { fetchPosts, commentPost } from '../../redux/actions'
 import { browserHistory } from 'react-router'
 
-let Posts = new React.createClass({
+class Posts extends  React.Component{
+	constructor(){
+		super();
+		this.handleCommentSubmit=this.handleCommentSubmit.bind(this);
+		this.state={
+			posts: [],
+		}
+	}
 
 	handleCommentSubmit(data, postId){
 		// make post comment request, receive post and update list of posts
@@ -30,13 +37,13 @@ let Posts = new React.createClass({
 				}
 				
 			})
-	},
+	}
 
-	getInitialState(){
-		return {
-			posts: []
-		}
-	},
+	// getInitialState(){
+	// 	return {
+	// 		posts: []
+	// 	}
+	// },
 
 	componentDidMount(){
 		let dispatch = store.dispatch
@@ -46,11 +53,11 @@ let Posts = new React.createClass({
 					posts: posts
 				})
 			})
-	},
+	}
 
 	componentWillUnmount(){
 
-	},
+	}
 
 	render(){
 		return (
@@ -63,6 +70,6 @@ let Posts = new React.createClass({
 			
 		)
 	}
-});
+};
 
 export default Posts

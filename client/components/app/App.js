@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import NavBar from '../navbar/NavBar'
 import { connect } from 'react-redux' 
+import Proptypes from  'prop-types';
+class App extends  React.Component{
 
-let App = new React.createClass({
 
 	render(){
 
@@ -14,6 +15,6 @@ let App = new React.createClass({
         	</div>		
 		)
 	}
-});
+};
 
 export default App

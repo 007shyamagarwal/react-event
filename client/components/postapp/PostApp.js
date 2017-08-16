@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-let PostApp = new React.createClass({
+class PostApp extends React.Component{
 
 	render(){
 		return (
@@ -9,6 +9,6 @@ let PostApp = new React.createClass({
 			</div>
 		)
 	}
-})
+}
 
 export default PostApp

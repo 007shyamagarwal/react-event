@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { MenuItem } from 'react-bootstrap'
 
-let Logout = new React.createClass({
+class Logout extends React.Component{
 	render(){
 		const { logoutUser } = this.props
 
@@ -9,7 +9,7 @@ let Logout = new React.createClass({
 			<MenuItem eventKey={2.3} onClick={this.logoutUser}>Logout</MenuItem>
 		)
 	}
-})
+}
 
 export default Logout
 

@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 
-let Comments = new React.createClass({
-	
+class Comments extends   React.Component{
+
+	constructor(){
+		super();
+		this.state={
+			comments:[],
+		};
+	}
 	getInitialState(){
 		return {
 			comments: []
 		}
-	},
+	}
 
 	render(){
 
 	}
-})
+}

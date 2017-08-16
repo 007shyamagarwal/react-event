@@ -12,7 +12,23 @@ import { Button } from 'react-bootstrap'
 
 const url = '/api/users'
 
-let Register = new React.createClass({
+class Register extends  React.Component{
+	constructor(){
+		super();
+		this.handleSubmit=this.handleSubmit.bind(this);
+		this.enableButton=this.enableButton.bind(this);
+		this.disableButton=this.disableButton.bind(this);
+		this.updateAuth=this.updateAuth.bind(this);
+		this.state={
+			loggedIn: Auth.loggedIn(),
+			email: '',
+			password: '',
+			name: '',
+			canSubmit: false,
+			type: '',
+			message: ''
+		}
+	}
 
 	handleSubmit(data) {
 		this.setState({
@@ -22,35 +38,35 @@ let Register = new React.createClass({
 		registerUser(data)(store.dispatch).then( () => {
 			browserHistory.push('/home')
 		})
-	},
+	}
 
   	enableButton() {
   		this.setState({ canSubmit: true });
-  	},
+  	}
 
   	disableButton() {
   		this.setState({ canSubmit: false });
-  	},
+  	}
 
-	getInitialState(){
-		return {
-			loggedIn: Auth.loggedIn(),
-			email: '',
-			password: '',
-			name: '',
-			canSubmit: false
-		}
-	},
+	// getInitialState(){
+	// 	return {
+	// 		loggedIn: Auth.loggedIn(),
+	// 		email: '',
+	// 		password: '',
+	// 		name: '',
+	// 		canSubmit: false
+	// 	}
+	// },
 
 	updateAuth(loggedIn){
     	this.setState({
       		loggedIn: loggedIn
     	})
-  	},
+  	}
 
 	componentWillMount() {
   
-  	},
+  	}
 
 	render() {
 		if (this.state.type && this.state.message) {
@@ -83,7 +99,7 @@ let Register = new React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 function mapStateToProps(state, props){
 	const { auth, mainReducer } = state

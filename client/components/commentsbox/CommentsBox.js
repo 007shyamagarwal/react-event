@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import CommentForm from '../commentform/CommentForm'
 
-let CommentsBox = new React.createClass({
+import Proptypes from  'prop-types';    //added for new features
+
+class CommentsBox extends React.Component{
+	constructor(){
+		super();
+	}
 
 	render(){
 		return (
@@ -14,6 +19,6 @@ let CommentsBox = new React.createClass({
 			</div>
 		)
 	}
-})
+}
 
 export default CommentsBox

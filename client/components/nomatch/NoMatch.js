@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-let NoMatch = new React.createClass({
+class NoMatch extends  React.Component{
 	render(){
 		return (
 			<div className="container">
@@ -8,6 +8,6 @@ let NoMatch = new React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 export default NoMatch

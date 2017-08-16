@@ -10,8 +10,6 @@ function requiredProcessEnv(name) {
   return process.env[name];
 }
 
-// All configurations will extend these options
-// ============================================
 var all = {
   env: process.env.NODE_ENV,
 
@@ -29,7 +27,7 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'basic-feed-app-secret'
+    session: 'event-app-secret'
   },
 
   // List of user roles
@@ -46,7 +44,6 @@ var all = {
 };
 
 // Export the config object based on the NODE_ENV
-// ==============================================
 module.exports = _.merge(
   all,
   require('./development.js') || {});
