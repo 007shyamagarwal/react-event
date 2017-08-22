@@ -2,7 +2,7 @@ const BASE_URL = 'http://localhost:3001/api/'
 import Auth from '../auth/auth'
 
 function callApi(endpoint, authenticated) {
-  console.log('in callApi')
+ //   console.log('in callApi')
   let token = localStorage.getItem('id_token') || null
   let config = {}
 

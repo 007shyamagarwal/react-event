@@ -29,7 +29,7 @@ const show = (req, res, next) => {
 }
 
 const reply = (req, res, next) => {
-	console.log('reply called ' + req.params.postId)
+	//console.log('reply called ' + req.params.postId)
 	let postId = req.params.postId
 	Post.findById(postId, (err, post) => {
 		if(err) return handleError(res, { err: err }, 400)

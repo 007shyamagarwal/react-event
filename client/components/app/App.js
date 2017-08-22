@@ -5,16 +5,15 @@ import Proptypes from  'prop-types';
 class App extends  React.Component{
 
 
-	render(){
+    render(){
 
-		return (
-			<div>
-				<NavBar />
-
-	        	{this.props.children}	
-        	</div>		
-		)
-	}
+        return (
+            <div>
+                <NavBar />
+                {this.props.children}	
+            </div>		
+        )
+    }
 };
 
 export default App

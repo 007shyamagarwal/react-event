@@ -68,9 +68,7 @@ function signToken(id, role) {
   });
 }
 
-/**
- * Set token cookie directly for oAuth strategies
- */
+
 function setTokenCookie(req, res) {
   if (!req.user) {
     return res.status(404).send('Something went wrong, please try again.');

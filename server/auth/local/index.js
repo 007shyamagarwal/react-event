@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
     // changed to include user
     user.salt = undefined
     user.password = undefined
-    console.log('user after deleting: ' + JSON.stringify(user))
+   // console.log('user after deleting: ' + JSON.stringify(user))
     res.json({token: token, user: user})
   })(req, res, next)
 });

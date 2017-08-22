@@ -242,8 +242,8 @@ export const loginUser = (creds) => {
           localStorage.setItem('token', user.token)
           localStorage.setItem('loggedIn', true)
           // Dispatch the success action
-          console.log('user before dispatching receiveLogin: ' 
-              + JSON.stringify(user))
+                    /*console.log('user before dispatching receiveLogin: ' 
+              + JSON.stringify(user))*/
           dispatch(receiveLogin(user))
         }
       }).catch(err => console.log("Error: ", err))
@@ -276,11 +276,11 @@ export const registerUser = (creds) => {
           localStorage.setItem('userId', user.user._id)
           localStorage.setItem('userName', user.user.name)
           
-          console.log('local storage: ' + JSON.stringify(localStorage))
+//console.log('local storage: ' + JSON.stringify(localStorage))
           // Dispatch the success action
           dispatch(receiveRegister(user))
-          console.log('store state after receiveRegister dispatch: ' + JSON.stringify(store.getState()))
-          console.log('user after receiveRegister dispatch: ' + JSON.stringify(user))
+       //   console.log('store state after receiveRegister dispatch: ' + JSON.stringify(store.getState()))
+        //  console.log('user after receiveRegister dispatch: ' + JSON.stringify(user))
 
           return Promise.resolve()
         }
@@ -328,14 +328,14 @@ export const createPost = (data) => {
     return fetch(POST_API, config)
       .then(response => response.json().then(post => ({ post, response }))
         ).then(({ post, response }) => {
-          console.log('response ' + JSON.stringify(response))
-          console.log('post ' + JSON.stringify(response))
+      //    console.log('response ' + JSON.stringify(response))
+       //   console.log('post ' + JSON.stringify(response))
           if(!response.ok){
             dispatch(postFailure(post.message))
             return Promise.reject(post)
           } else {
 
-          console.log('post successful: ' + JSON.stringify(post))
+     //     console.log('post successful: ' + JSON.stringify(post))
           // Dispatch the success action
           dispatch(postSuccess(post))
         }
@@ -381,14 +381,14 @@ export const fetchPosts = () => {
           dispatch(logoutUser())
           return Promise.reject()
         }
-        console.log('response status: ' + response.status)
-        console.log('response from fetch posts : ' + JSON.stringify(posts))
+       // console.log('response status: ' + response.status)
+       // console.log('response from fetch posts : ' + JSON.stringify(posts))
         if(!response.ok){
-          console.log('resonse not ok: ' + response)
+//console.log('resonse not ok: ' + response)
           dispatch(fetchPostsFailure(posts.message))
           return Promise.reject(posts)
         } else {
-          console.log('fetch successful: ' + JSON.stringify(posts))
+       //   console.log('fetch successful: ' + JSON.stringify(posts))
 
           dispatch(fetchPostsSuccess(posts))
           // TODO: set state in caller componentDidMount
@@ -433,7 +433,7 @@ export const commentPost = (data) => {
           dispatch(commentPostFailure(post.message))
           return Promise.reject({error: post.message})
         }else {
-          console.log('comment post successful: ' + JSON.stringify(post))
+//console.log('comment post successful: ' + JSON.stringify(post))
 
           dispatch(commentPostSuccess(post))
           return Promise.resolve(post)

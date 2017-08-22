@@ -17,11 +17,11 @@ function validationError(res, statusCode) {
  * Creates a new user
  */
 exports.create = function(req, res, next) {
-  console.log('create called : ' + JSON.stringify(req.body));
+ // console.log('create called : ' + JSON.stringify(req.body));
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  console.log('before saveAsync', newUser)
+ // console.log('before saveAsync', newUser)
   newUser.save( (err, user) => {
     if(err) { return validationError(res) }
     var token = jwt.sign({ _id: user._id }, config.secrets.session, {

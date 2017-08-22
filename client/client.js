@@ -15,16 +15,16 @@ import Auth from './auth/auth'
 
 
 render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path='/' component={App} store={store}>
-        <Route path='register' component={Register} onEnter={Auth.requireNotLoggedIn} />
-        <Route path='login' component={Login}  onEnter={Auth.requireNotLoggedIn} />
-        <Route path='home' component={Posts} onEnter={Auth.requireLogin} />
-        <Route path='new' component={PostForm} onEnter={Auth.requireLogin} />
-        <Route path='*' component={NoMatch} />
-      </Route>
-    </Router>
-  </Provider>,
-  document.getElementById('app')
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path='/' component={App} store={store}>
+                <Route path='register' component={Register} onEnter={Auth.requireNotLoggedIn} />
+                <Route path='login' component={Login}  onEnter={Auth.requireNotLoggedIn} />
+                <Route path='home' component={Posts} onEnter={Auth.requireLogin} />
+                <Route path='new' component={PostForm} onEnter={Auth.requireLogin} />
+                <Route path='*' component={NoMatch} />
+            </Route>
+        </Router>
+    </Provider>,
+    document.getElementById('app')
 )
