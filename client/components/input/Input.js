@@ -3,7 +3,9 @@ import Formsy from 'formsy-react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap'
 import Proptypes from  'prop-types';    //added for new features
 
-const Input = React.createClass({
+var createReactClass = require('create-react-class');
+//used instead of  React.createClass
+const Input = createReactClass({
 
   // Add the Formsy Mixin
   mixins: [Formsy.Mixin],

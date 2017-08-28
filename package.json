@@ -17,7 +17,7 @@
     "express": "^4.13.4",
     "express-jwt": "^3.4.0",
     "express-session": "^1.13.0",
-    "formsy-react": "^0.18.0",
+    "formsy-react": "^0.19.5",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.2.3",
     "jsonwebtoken": "^6.2.0",

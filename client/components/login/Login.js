@@ -109,23 +109,23 @@ import { Button } from 'react-bootstrap'
                  </div>;
   		}
 		return (
-			<div className='container'>
+			<div className='container'  style={{width:350,marginLeft:'35%',marginTop:'9%'}}>
 				<Form onSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton} className="login">
-					<Input type='text' name='email' className='form-control' 
+					<Input type='text'   name='email' className='form-control' 
 						placeholder='Email' value={this.state.email} title='Email'
 						validations="isEmail" validationError="This is not a valid email" required/>
 					<p/>
-					<Input type='password' name='password' className='form-control' 
+					<Input type='password' name='password'   className='form-control' 
 						placeholder='Password' value={this.state.password} title='Password'
 						required/>
 
 					{status} 
 						
 					<p/>
-					<Button type="submit" disabled={!this.state.canSubmit}>Log In</Button>	
+					<Button type="submit" style={{marginLeft:'40%'}} disabled={!this.state.canSubmit}>Log In</Button>	
 
 					<p/>
-					<Link to='/register'>Register</Link>
+					<Link style={{marginLeft:'31%'}} to='/register'>New to this ?? Click here!!</Link>
 				</Form>
 			</div>
 		)

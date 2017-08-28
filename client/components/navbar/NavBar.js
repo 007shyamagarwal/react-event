@@ -35,8 +35,8 @@ class NavBar extends React.Component{
                         <a href="/home">Event Feed</a>
                     </Navbar.Brand>
                 </Navbar.Header>
-                <Nav pullRight >
-                    <NavItem eventKey={1} href="/home">Feed</NavItem>
+                <Nav pullRight   >
+                    <NavItem  eventKey={1} href="/home">Feed</NavItem>
 
                     { relevantNavItem }
 									

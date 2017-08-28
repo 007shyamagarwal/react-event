@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
-import { MenuItem } from 'react-bootstrap'
+import React from 'react';
+import { MenuItem } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class Logout extends React.Component{
     render(){

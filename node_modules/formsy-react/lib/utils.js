@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 module.exports = {
   arraysDiffer: function arraysDiffer(a, b) {
@@ -34,7 +34,7 @@ module.exports = {
   isSame: function isSame(a, b) {
     if ((typeof a === 'undefined' ? 'undefined' : _typeof(a)) !== (typeof b === 'undefined' ? 'undefined' : _typeof(b))) {
       return false;
-    } else if (Array.isArray(a)) {
+    } else if (Array.isArray(a) && Array.isArray(b)) {
       return !this.arraysDiffer(a, b);
     } else if (typeof a === 'function') {
       return a.toString() === b.toString();

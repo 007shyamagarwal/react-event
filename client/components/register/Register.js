@@ -76,7 +76,7 @@ class Register extends  React.Component{
             </div>;
         }
         return (
-            <div className='container'>
+            <div className='container'   style={{width:350,marginLeft:'35%',marginTop:'9%'}}    >
                 <Form onSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton} className="register">
                     <Input type='text' name='name' className='form-control' 
                         placeholder='Full Name' value={this.state.name} title='Name'
@@ -91,10 +91,10 @@ class Register extends  React.Component{
                         placeholder='Password' value={this.state.password} title='Password'
                         required/>
                     <p/>
-                    <Button type="submit" disabled={!this.state.canSubmit} >Register</Button>	
+                    <Button type="submit"  style={{marginLeft:'40%'}}  disabled={!this.state.canSubmit} >Register</Button>	
                     {status} 
                     <p/>
-                    <Link to='/login'>Login</Link>
+                    <Link style={{marginLeft:'32%'}} to='/login'>Already Registered??</Link>
                 </Form>
             </div>
         )
