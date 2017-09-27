@@ -32,15 +32,7 @@ class CommentForm extends  React.Component{
     disableButton() {
         this.setState({ canSubmit: false });
     }
-    /*
-	// getInitialState(){
-	// 	return {
-	// 		comment: '',
-	// 		status: '',
-	// 		canSubmit: false
-	// 	}
-	// }
-*/
+  
     render(){
         return (
             <div>

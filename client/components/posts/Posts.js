@@ -38,13 +38,7 @@ class Posts extends  React.Component{
 				
             })
     }
-    /*
-	// getInitialState(){
-	// 	return {
-	// 		posts: []
-	// 	}
-	// },
-*/
+ 
     componentDidMount(){
         let dispatch = store.dispatch
         dispatch(fetchPosts())

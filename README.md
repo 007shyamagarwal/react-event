@@ -11,7 +11,7 @@ A webapp for events built with react, redux, express, bootstrap, passport, nodej
 
 # How to run 
 1. npm install 
-2. npm npm start to start express server and build webpack file
+2. npm npm start to start express server 
 
 
 

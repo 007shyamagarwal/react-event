@@ -8,13 +8,7 @@ class Comments extends   React.Component{
             comments:[],
         };
     }
-    /*	
-	// getInitialState(){
-	// 	return {
-	// 		comments: []
-	// 	}
-//	}
-*/
+
     render(){
 
     }

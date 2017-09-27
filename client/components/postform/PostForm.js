@@ -38,15 +38,7 @@ class PostForm extends React.Component{
     disableButton() {
         this.setState({ canSubmit: false });
     }
-    /*
-	// getInitialState(){
-	// 	return {
-	// 		text: '',
-	// 		type: '',
-	// 		message: '',
-	// 		canSubmit: false
-	// 	}
-*/	// }
+  
 	
     render(){
         return (
